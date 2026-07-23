@@ -1,0 +1,12 @@
+from collections import Counter
+x=int(input())
+shoesize=list(map(int,input().split()))
+stock=Counter(shoesize)
+N=int(input())
+earning=0
+for i in range(N):
+    size,price =list(map(int,input().split()))
+    if stock[size]>0:
+        earning+=price
+        stock[size]-=1
+print(earning)
